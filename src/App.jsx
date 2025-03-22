@@ -7,7 +7,9 @@ function App() {
   return (
     <>
       <Icon path={mdiStore} size={10} />
-      <h1><Link to='/shop'>Start Shopping Now!</Link></h1>
+      <h1>
+        <Link to='/shop'>Start Shopping Now!</Link>
+      </h1>
     </>
   );
 }
