@@ -16,7 +16,7 @@ const Shop = () => {
           throw Error(`${response.status} ${getReasonPhrase(response.status)}`);
         }
         const productsList = await response.json();
-        setProducts(productsList);      
+        setProducts(productsList);
       } catch (error) {
         console.log(error.message);
         setError(error.message);
