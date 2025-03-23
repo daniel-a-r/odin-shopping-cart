@@ -1,5 +1,5 @@
 import Card from './Card.jsx';
-import './Cards.css'
+import './Cards.css';
 
 const Cards = ({ products }) => {
   const productCardList = products.map((product) => {
