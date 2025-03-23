@@ -1,4 +1,14 @@
+li.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
 img.card-img {
   object-fit: contain;
   width: 100%;
+}
+
+p.card-price {
+  font-weight: 600;
 }
