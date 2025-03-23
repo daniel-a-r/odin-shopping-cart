@@ -1,0 +1,4 @@
+img.card-img {
+  object-fit: contain;
+  width: 100%;
+}

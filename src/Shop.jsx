@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { getReasonPhrase } from 'http-status-codes';
 import Loading from './Loading.jsx';
 import ErrorPage from './ErrorPage';
+import Cards from './Cards.jsx';
 
 const Shop = () => {
   const [products, setProducts] = useState(null);
@@ -30,7 +31,7 @@ const Shop = () => {
     return <ErrorPage message={error} />;
   }
 
-  return (products && <h1>Shop page</h1>) || <Loading />;
+  return (products && <Cards products={products} />) || <Loading />;
 };
 
 export default Shop;

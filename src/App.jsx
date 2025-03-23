@@ -1,15 +1,29 @@
 import './App.css';
-import { Link } from 'react-router';
-import Icon from '@mdi/react';
-import { mdiStore } from '@mdi/js';
+import { Outlet, NavLink } from 'react-router';
 
 function App() {
   return (
     <>
-      <Icon path={mdiStore} size={10} />
-      <h1>
-        <Link to='/shop'>Start Shopping Now!</Link>
-      </h1>
+      <header>
+        <h1 className='header-name'>Odin Store</h1>
+        <nav>
+          <ul className='nav-list'>
+            <li>
+              <NavLink className='navlink' to='/'>
+                Home
+              </NavLink>
+            </li>
+            <li>
+              <NavLink className='navlink' to='/shop'>
+                Shop
+              </NavLink>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <Outlet />
+      </main>
     </>
   );
 }
