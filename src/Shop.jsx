@@ -1,37 +1,20 @@
-import { useEffect, useState } from 'react';
-import { getReasonPhrase } from 'http-status-codes';
-import Loading from './Loading.jsx';
-import ErrorPage from './ErrorPage';
-import Cards from './Cards.jsx';
+import Card from './Card.jsx';
+import { useLoaderData } from 'react-router';
 
 const Shop = () => {
-  const [products, setProducts] = useState(null);
-  const [error, setError] = useState(null);
+  const products = useLoaderData();
+  const productCardList = products.map((product) => {
+    return (
+      <Card
+        key={product.id}
+        imageURL={product.image}
+        price={product.price}
+        title={product.title}
+      />
+    );
+  });
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const url = 'https://fakestoreapi.com/products';
-        const response = await fetch(url, { mode: 'cors' });
-        if (!response.ok) {
-          throw Error(`${response.status} ${getReasonPhrase(response.status)}`);
-        }
-        const productsList = await response.json();
-        setProducts(productsList);
-      } catch (error) {
-        console.log(error.message);
-        setError(error.message);
-      }
-    };
-
-    fetchData();
-  }, []);
-
-  if (error) {
-    return <ErrorPage message={error} />;
-  }
-
-  return (products && <Cards products={products} />) || <Loading />;
+  return <ul className='cards'>{productCardList}</ul>;
 };
 
 export default Shop;
