@@ -12,3 +12,26 @@ img.card-img {
 p.card-price {
   font-weight: 600;
 }
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+  width: 2rem;
+  text-align: center;
+}
+
+div.quantity-input {
+  display: flex;
+  gap: 0.25rem;
+}

@@ -1,3 +1,4 @@
+import './Shop.css';
 import Card from './Card.jsx';
 import { useLoaderData } from 'react-router';
 
@@ -7,6 +8,7 @@ const Shop = () => {
     return (
       <Card
         key={product.id}
+        dataId={product.id}
         imageURL={product.image}
         price={product.price}
         title={product.title}

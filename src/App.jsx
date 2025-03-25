@@ -1,7 +1,9 @@
+import { useState } from 'react';
 import './App.css';
 import { Outlet, NavLink } from 'react-router';
 
 function App() {
+  const [totalItems, setTotalItems] = useState([]);
   return (
     <>
       <header>
@@ -18,11 +20,16 @@ function App() {
                 Shop
               </NavLink>
             </li>
+            <li>
+              {totalItems.length
+                ? totalItems.reduce((acc, cur) => acc + cur.quantity, 0)
+                : 0}
+            </li>
           </ul>
         </nav>
       </header>
       <main>
-        <Outlet />
+        <Outlet context={[totalItems, setTotalItems]} />
       </main>
     </>
   );
