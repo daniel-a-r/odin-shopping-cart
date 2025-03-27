@@ -20,7 +20,7 @@ function App() {
                 Shop
               </NavLink>
             </li>
-            <li>
+            <li className='cart-quantity'>
               {totalItems.length
                 ? totalItems.reduce((acc, cur) => acc + cur.quantity, 0)
                 : 0}

@@ -1,23 +1,27 @@
 #root {
-  /* max-width: 1280px; */
+  max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
+  padding-top: 0;
   text-align: center;
 }
 
 header {
-  margin-bottom: 1rem;
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  position: sticky;
+  top: 0px;
+  background-color: #242424;
 }
 
 h1 {
   font-size: 2rem;
 }
 
-h1.header-name {
-  margin-bottom: 0.75rem;
-}
-
 ul.nav-list {
+  font-size: 1.3rem;
   padding: 0;
   display: flex;
   justify-content: center;
@@ -28,6 +32,16 @@ li {
   list-style: none;
 }
 
-a.navlink {
+a.navlink,
+li.cart-quantity {
   font-size: 1.3rem;
+}
+
+@media (width >= 32rem) {
+  header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
 }

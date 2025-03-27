@@ -1,12 +1,29 @@
 li.card {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+div.product {
+  display: flex;
+  flex-direction: column;
   gap: 0.5rem;
 }
 
 img.card-img {
-  object-fit: contain;
   width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: contain;
+  background-color: #ffffff;
+}
+
+img.landscape {
+  width: 100%;
+}
+
+img.potrait {
+  height: 100%;
 }
 
 p.card-price {

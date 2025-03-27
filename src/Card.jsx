@@ -53,10 +53,12 @@ const Card = ({ dataId, imageURL, price, title }) => {
 
   return (
     <li className='card'>
-      <img className='card-img' src={imageURL} alt='' />
-      <div className='card-info'>
-        <p>{title}</p>
-        <p className='card-price'>${price}</p>
+      <div className='product'>
+        <img className='card-img' src={imageURL} alt='' />
+        <div className='card-info'>
+          <p>{title}</p>
+          <p className='card-price'>${price}</p>
+        </div>
       </div>
       <form action='' onSubmit={handleSubmit}>
         <div className='quantity-input'>

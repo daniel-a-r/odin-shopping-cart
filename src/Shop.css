@@ -1,5 +1,12 @@
 ul.cards {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.75rem;
+}
+
+@media (width >= 32rem) {
+  ul.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  }
 }
