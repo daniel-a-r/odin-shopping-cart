@@ -1,25 +1,18 @@
-import { useEffect, useState } from 'react';
 import './Card.css';
+import { useState } from 'react';
 import Icon from '@mdi/react';
 import { mdiPlus, mdiMinus } from '@mdi/js';
 import { useOutletContext } from 'react-router';
 
 const Card = ({ dataId, imageURL, price, title }) => {
   const [totalItems, setTotalItems] = useOutletContext();
-  const [quantity, setQuantity] = useState(0);
-
-  useEffect(() => {
-    const foundItem = totalItems.find((item) => item.id === dataId);
-    if (foundItem) {
-      setQuantity(foundItem.quantity);
-    }
-  }, [totalItems, dataId]);
+  const foundItem = totalItems.find((item) => item.id === dataId);
+  const initialQuantity = foundItem ? foundItem.quantity : 0;
+  const [quantity, setQuantity] = useState(initialQuantity);
 
   const handleSubmit = (event) => {
     event.preventDefault();
     const foundIndx = totalItems.findIndex((item) => item.id === dataId);
-    console.log(foundIndx);
-    console.log(totalItems);
     if (foundIndx === -1) {
       setTotalItems(totalItems.concat({ id: dataId, quantity }));
     } else {
