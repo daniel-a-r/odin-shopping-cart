@@ -1,3 +1,7 @@
+# Shopping Cart
+
+[Live site](https://odin-shopping-cart-ejo.pages.dev/shop)
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
